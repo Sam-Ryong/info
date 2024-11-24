@@ -15,6 +15,8 @@ const Profile = () => {
           className="profile-image"
         />
         <h2 className="profile-name">{name}</h2>
+        <h4>AI에게 홍승표에 대해 물어보세요~</h4>
+        <Ask></Ask>
         <p className="profile-major">{major}</p>
         <p className="profile-mbti">
           <strong>MBTI:</strong> {mbti}
@@ -33,7 +35,6 @@ const Profile = () => {
           </div>
         )}
       </div>
-      <Ask></Ask>
     </div>
   );
 };

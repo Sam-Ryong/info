@@ -1,20 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import "./Content.css";
 
-const Content = () => {
+const Content = ({ icon, selectedItem }) => {
+  const [editorContent, setEditorContent] = useState("a");
+  const handleEditorChange = (value) => {
+    setEditorContent(value); // 에디터 내용 상태 업데이트
+  };
   return (
     <main className="content">
-      <h2>티스토리가 개발 블로그로 선택된 이유</h2>
-      <p>개요...</p>
-      <ul>
-        <li>네이버 블로그</li>
-        <li>구글 블로거</li>
-        <li>Medium</li>
-        <li>Brunch</li>
-        <li>Velog</li>
-        <li>Tistory</li>
-      </ul>
-      <p>결과...</p>
+      <h1>
+        {icon} {selectedItem}
+      </h1>
+      {selectedItem != "Admin" ? (
+        <p>준비중</p>
+      ) : (
+        <div className="editor-container">
+          <h2>게시글 작성</h2>
+          <ReactQuill
+            value={editorContent}
+            onChange={handleEditorChange}
+            modules={{
+              toolbar: [
+                [{ header: "1" }, { header: "2" }, { font: [] }],
+                [{ list: "ordered" }, { list: "bullet" }],
+                ["bold", "italic", "underline"],
+                ["link"],
+                ["blockquote"],
+                [{ align: [] }],
+                ["image"],
+                ["video"],
+              ],
+            }}
+          />
+        </div>
+      )}
     </main>
   );
 };

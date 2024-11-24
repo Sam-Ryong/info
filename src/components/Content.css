@@ -1,15 +1,35 @@
 .content {
   flex: 1;
   padding: 20px;
-  background-color: rgb(150, 150, 150);
+  background-color: #f0f0f0; /* 밝은 배경색으로 변경 */
+  border-radius: 10px; /* 둥근 모서리 추가 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 카드와 유사한 그림자 */
+  margin: 20px auto; /* 카드 스타일과 동일한 간격 */
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 30%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* 호버 애니메이션 */
+  opacity: 0.8;
+}
+
+.content:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* 호버 시 그림자 강조 */
 }
 
 .content h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* 제목 크기를 약간 더 키움 */
   margin-bottom: 20px;
+  color: #333; /* 텍스트 색상 통일 */
+  text-align: center; /* 제목 중앙 정렬 */
 }
 
 .content ul {
   padding-left: 20px;
   list-style: disc;
+  line-height: 1.6; /* 줄 간격 추가로 가독성 향상 */
+  color: #555; /* 다소 어두운 색상 적용 */
+}
+
+.content ul li {
+  margin-bottom: 10px; /* 항목 간격 추가 */
 }

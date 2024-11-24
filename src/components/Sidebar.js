@@ -1,5 +1,4 @@
 import React from "react";
-import sidebarData from "../hardData/Sidebar.json";
 import "./Sidebar.css";
 import {
   FaLink,
@@ -14,6 +13,7 @@ import {
   FaLeaf,
   FaShoePrints,
 } from "react-icons/fa";
+import { FaGear } from "react-icons/fa6";
 
 const icons = {
   FaLink,
@@ -29,7 +29,7 @@ const icons = {
   FaShoePrints,
 };
 
-const Sidebar = () => {
+const Sidebar = ({ onItemClick, sidebarData }) => {
   return (
     <aside className="sidebar">
       {Object.entries(sidebarData).map(([section, data]) => (
@@ -39,7 +39,10 @@ const Sidebar = () => {
           </h2>
           <ul>
             {data.List.map((item, index) => (
-              <li key={index}>
+              <li
+                key={index}
+                onClick={() => onItemClick(icons[item.icon], item.name)}
+              >
                 {React.createElement(icons[item.icon])} {item.name}
               </li>
             ))}
@@ -47,6 +50,11 @@ const Sidebar = () => {
           <hr />
         </React.Fragment>
       ))}
+      <ul>
+        <li onClick={() => onItemClick(FaGear, "Admin")}>
+          <FaGear /> Admin
+        </li>
+      </ul>
     </aside>
   );
 };
