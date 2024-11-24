@@ -1,6 +1,7 @@
 import React from "react";
 import profileData from "../hardData/Profile.json"; // JSON 파일 import
 import "./Profile.css";
+import Ask from "./Ask";
 
 const Profile = () => {
   const { name, major, mbti, born, imageURL, currentWork } = profileData;
@@ -32,6 +33,7 @@ const Profile = () => {
           </div>
         )}
       </div>
+      <Ask></Ask>
     </div>
   );
 };

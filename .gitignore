@@ -11,6 +11,7 @@ node_modules
 
 # production
 /build
+/src/ask
 
 # misc
 .DS_Store
