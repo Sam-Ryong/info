@@ -1,0 +1,28 @@
+{
+  "Links": {
+    "icon": "FaLink",
+    "List": [
+      { "name": "Home", "icon": "FaHome" },
+      { "name": "Github", "icon": "FaGithub" }
+    ]
+  },
+  "Study": {
+    "icon": "FaBook",
+    "List": [
+      { "name": "Backend", "icon": "FaServer" },
+      { "name": "Infra", "icon": "FaCloud" },
+      { "name": "Latest Tech", "icon": "FaTools" }
+    ]
+  },
+  "Project": {
+    "icon": "FaBook",
+    "List": [
+      { "name": "Toy", "icon": "FaMotorcycle" },
+      { "name": "Serious", "icon": "FaBusinessTime" }
+    ]
+  },
+  "Life": {
+    "icon": "FaLeaf",
+    "List": [{ "name": "Events", "icon": "FaShoePrints" }]
+  }
+}

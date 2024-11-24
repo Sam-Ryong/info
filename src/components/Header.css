@@ -1,0 +1,16 @@
+.header {
+  background: rgb(85, 85, 85);
+  text-align: center;
+  padding: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: azure;
+}
+
+.header p {
+  margin: 0;
+  color: #888;
+}

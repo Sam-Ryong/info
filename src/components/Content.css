@@ -1,0 +1,15 @@
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: rgb(150, 150, 150);
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.content ul {
+  padding-left: 20px;
+  list-style: disc;
+}
