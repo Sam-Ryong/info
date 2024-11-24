@@ -1,0 +1,46 @@
+<div>
+  <main class="container">
+    <section>
+      <h2>성능 확인용 페이지</h2>
+
+      <select id="model" name="model" hidden="hidden" required>
+        <option
+          value="https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
+        >
+          TinyLlama/TinyLlama-1.1B-Chat-v1.0 Q4_K_M (669 MB)
+        </option>
+      </select>
+      <br />
+
+      <textarea id="prompt" name="prompt">
+ What is his Major in university?? </textarea
+      >
+      <br />
+
+      <pre id="result" name="result"></pre>
+    </section>
+    <br />
+    <section>
+      <button id="run">Run</button>
+    </section>
+
+    <section>
+      <button id="run-progress-loading-model" aria-busy="true" hidden="hidden">
+        Loading model...
+      </button>
+      <button id="run-progress-loaded-model" aria-busy="true" hidden="hidden">
+        Loaded model
+      </button>
+      <button id="run-progress-generating" aria-busy="true" hidden="hidden">
+        Generating...
+      </button>
+    </section>
+
+    <section>
+      <progress id="model-progress" hidden="hidden" />
+    </section>
+  </main>
+
+  <script type="module" src="example-multi-thread.js"></script>
+  <script src="coi-serviceworker.min.js"></script>
+</div>
