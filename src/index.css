@@ -2,8 +2,8 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #a07a7a;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-    url("https://image.bugsm.co.kr/album/images/500/201097/20109739.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+    url("/src/images/Fixyou.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }

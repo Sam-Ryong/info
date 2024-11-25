@@ -8,19 +8,26 @@
           TinyLlama/TinyLlama-1.1B-Chat-v1.0 Q4_K_M (669 MB)
         </option>
       </select>
+      <section style="display: flex; align-items: center">
+        <textarea
+          id="prompt"
+          name="prompt"
+          style="
+            width: 80%;
+            background-color: rgb(0, 0, 0, 0.1);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+          "
+        >
+WASM AI에게 홍승표에 관해 질문하세요</textarea
+        >
+        <button id="run" style="margin-left: 10px; height: 40px">Run</button>
+      </section>
       <br />
-
-      <textarea id="prompt" name="prompt">
- What is his Major in university?? </textarea
-      >
-      <br />
-
-      <pre id="result" name="result"></pre>
+      <pre id="result" name="result" style="color: azure"></pre>
     </section>
-    <br />
-    <section>
-      <button id="run">Run</button>
-    </section>
+
     <section>
       <button id="run-progress-loading-model" aria-busy="true" hidden="hidden">
         Loading model...
