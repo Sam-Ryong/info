@@ -52,5 +52,5 @@
   position: absolute; /* 부모 내부에서 절대 위치 */
   bottom: 0; /* 부모의 하단에 배치 */
   left: 50%; /* 수평 가운데 정렬 */
-  transform: translate(-50%, 0%); /* 정확히 가운데로 이동 */
+  transform: translate(-75%, 0%); /* 정확히 가운데로 이동 */
 }
