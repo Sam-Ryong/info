@@ -13,7 +13,6 @@ const buttonRunProgressGenerating = document.querySelector(
   "#run-progress-generating"
 );
 const selectModel = document.querySelector("select#model");
-//const selectModel = document.querySelector("model"); // 실험용
 const modelProgress = document.querySelector("#model-progress");
 const textareaPrompt = document.querySelector("textarea#prompt");
 const textareaResult = document.querySelector("#result");
@@ -25,9 +24,9 @@ const onModelLoaded = () => {
   console.debug("model: loaded");
 
   app.run({
-    prompt: postPrompt + prompt + "### Assistant: ",
+    prompt: postPrompt + prompt,
     ctx_size: 2048,
-    temp: 0.4,
+    temp: 0.6,
     top_k: 40,
     no_display_prompt: true,
   });
