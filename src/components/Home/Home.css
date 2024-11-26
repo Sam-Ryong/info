@@ -1,0 +1,16 @@
+.slider-container {
+  width: 100%; /* 필요에 따라 조정 */
+  max-width: 800px; /* 슬라이더의 최대 너비 */
+  margin: 0 auto; /* 가운데 정렬 */
+  overflow: hidden; /* 슬라이더 범위를 넘는 부분 숨김 */
+  margin-bottom: 10px;
+}
+
+.profile-container {
+  background-color: rgba(240, 240, 240, 1); /* Dark background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* 카드와 유사한 그림자 */
+  max-width: 75%;
+  margin: 0 auto; /* 가운데 정렬 */
+}

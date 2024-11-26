@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Sidebar from "./components/Sidebar";
-import Content from "./components/Content";
-import Profile from "./components/Profile"; // 새 프로필 컴포넌트 추가
-import Header from "./components/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Content from "./components/Content/Content";
+import Header from "./components/Header/Header";
 import "./App.css";
 import sidebarData from "./hardData/Sidebar.json";
 import { FaHome } from "react-icons/fa";

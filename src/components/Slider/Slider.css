@@ -1,0 +1,34 @@
+.swiper-slide img {
+  width: 100%; /* 부모 너비에 맞춤 */
+  height: 500px; /* 원하는 높이 지정 */
+  object-fit: cover; /* 이미지 비율 유지하며 자르기 */
+}
+
+/* Slider.css */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000; /* 화살표 색상 */
+  font-size: 20px; /* 크기 조정 */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #007bff; /* 마우스 오버 시 색상 */
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.slide-content h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.slide-content p {
+  font-size: 1rem;
+}

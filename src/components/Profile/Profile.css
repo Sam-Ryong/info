@@ -1,0 +1,27 @@
+/* 모든 기본 스타일 초기화 */
+.markdown-container * {
+  all: unset; /* 모든 스타일 초기화 */
+  box-sizing: border-box;
+}
+
+.markdown-container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif; /* 원하는 기본 폰트 설정 */
+  font-size: 16px; /* 기본 폰트 크기 설정 */
+  color: black; /* 기본 텍스트 색상 설정 */
+}
+
+.markdown-container h1,
+.markdown-container h2,
+.markdown-container h3,
+.markdown-container h4,
+.markdown-container h5,
+.markdown-container h6 {
+  font-family: "Helvetica", sans-serif; /* 각 헤더의 폰트 설정 */
+  margin: 0.5em 0;
+}
+
+.markdown-container p {
+  margin: 1em 0; /* 문단 간격 설정 */
+}

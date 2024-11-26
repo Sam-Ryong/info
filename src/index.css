@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #a07a7a;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+  background: linear-gradient(rgba(50, 50, 50, 0.7), rgba(50, 50, 50, 1)),
     url("/src/images/Fixyou.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
