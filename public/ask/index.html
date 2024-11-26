@@ -62,7 +62,7 @@
             resize: none; /* 크기 조정 불가 */
           "
         >
-WASM AI에게 홍승표에 관해 질문하세요</textarea
+WASM TinyLlama에게 홍승표에 관해 질문하세요(영어 권장)</textarea
         >
         <button
           id="run"
@@ -91,19 +91,24 @@ WASM AI에게 홍승표에 관해 질문하세요</textarea
       <pre
         id="result"
         name="result"
-        style="color: azure; font-size: 14px; max-width: 100%"
+        style="
+          color: azure;
+          font-size: 14px;
+          white-space: pre-wrap; /* 자동 줄바꿈 */
+          word-wrap: break-word; /* 단어가 너무 길면 줄바꿈 */
+        "
       ></pre>
     </section>
 
     <section>
       <button id="run-progress-loading-model" aria-busy="true" hidden="hidden">
-        Loading model...
+        모델 로딩 중...(약 1분 소요)
       </button>
       <button id="run-progress-loaded-model" aria-busy="true" hidden="hidden">
-        Loaded model
+        모델 로딩 중...(약 10초 소요)
       </button>
       <button id="run-progress-generating" aria-busy="true" hidden="hidden">
-        Generating...
+        답변 생성중...
       </button>
     </section>
 
