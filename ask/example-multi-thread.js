@@ -25,9 +25,9 @@ const onModelLoaded = () => {
   console.debug("model: loaded");
 
   app.run({
-    prompt: postPrompt + prompt + " Answer : ",
-    ctx_size: 128,
-    temp: 0.8,
+    prompt: postPrompt + prompt + "### Assistant: ",
+    ctx_size: 2048,
+    temp: 0.4,
     top_k: 40,
     no_display_prompt: true,
   });
