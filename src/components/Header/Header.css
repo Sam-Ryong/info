@@ -54,3 +54,11 @@
   left: 50%; /* 수평 가운데 정렬 */
   transform: translate(-75%, 0%); /* 정확히 가운데로 이동 */
 }
+
+.visitor-count {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 14px;
+  color: #ffffff;
+}
