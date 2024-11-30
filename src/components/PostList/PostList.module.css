@@ -1,0 +1,63 @@
+/* PostList.module.css */
+
+/* 전체적으로 글씨와 테이블의 기본 스타일 */
+.postList {
+  margin: 20px;
+  padding: 20px;
+  background-color: rgba(200, 200, 200, 0);
+  border-radius: 8px;
+}
+
+.postTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.postTable th,
+.postTable td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.postTable th {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+.postTable td {
+  background-color: #ffffff;
+}
+
+/* 게시글마다 구분선 추가 */
+.postTable tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.postTable tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* 로딩, 에러, 데이터 없음 메시지 */
+.loading,
+.error,
+.noPosts {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* 클릭 가능한 항목 스타일 */
+.postRow {
+  transition: background-color 0.3s ease;
+}
+
+.postRow:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}

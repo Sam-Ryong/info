@@ -13,6 +13,7 @@ const Header = () => {
     // Fetch visitor count
     const fetchVisitorCount = async () => {
       try {
+        axios.defaults.withCredentials = true;
         const response = await axios.get(
           `${process.env.REACT_APP_API_HOST}/visit`,
           { withCredentials: true }

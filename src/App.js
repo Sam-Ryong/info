@@ -3,7 +3,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Content from "./components/Content/Content";
 import Header from "./components/Header/Header";
 import "./App.css";
-import sidebarData from "./hardData/Sidebar.json";
+import sidebarData from "./components/hardData/Sidebar.json";
 import { FaHome } from "react-icons/fa";
 
 const App = () => {
@@ -25,7 +25,11 @@ const App = () => {
       <Header />
       <div className="main-layout">
         <Sidebar onItemClick={handleItemClick} sidebarData={sidebarData} />
-        <Content selectedItem={selectedItem} icon={selectedIcon} />
+        <Content
+          selectedItem={selectedItem}
+          icon={selectedIcon}
+          setSelectedItem={setSelectedItem}
+        />
       </div>
     </div>
   );

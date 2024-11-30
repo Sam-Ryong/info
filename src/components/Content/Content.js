@@ -1,16 +1,15 @@
 import React from "react";
 import "react-quill/dist/quill.snow.css";
 import "./Content.css";
-import Home from "../Home/Home";
-import Editor from "../Editor/Editor";
+import ContentSelector from "../ContentSelector/ContentSelector";
 
-const Content = ({ icon, selectedItem }) => {
+const Content = ({ icon, selectedItem, setSelectedItem }) => {
   return (
     <main className="content">
       <h1>
         {icon} {selectedItem}
       </h1>
-      {selectedItem == "Home" ? <Home /> : <Editor />}
+      <ContentSelector name={selectedItem} setSelectedItem={setSelectedItem} />
     </main>
   );
 };
