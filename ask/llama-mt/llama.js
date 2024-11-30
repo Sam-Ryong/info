@@ -50,7 +50,7 @@ class LlamaCpp {
   run({
     prompt,
     chatml = false,
-    n_predict = 50,
+    n_predict = 20,
     ctx_size = 512,
     batch_size = 512,
     temp = 0.6,
