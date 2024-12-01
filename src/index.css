@@ -4,7 +4,7 @@ body {
   background-color: #a07a7a;
   background: linear-gradient(rgba(50, 50, 50, 0.7), rgba(50, 50, 50, 1)),
     url("/src/images/Fixyou.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
 }
 

@@ -37,7 +37,7 @@ const Header = () => {
           </span>
         </div>
         <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
-          <H1>홍삼룡의 블로그</H1>
+          <H1>홍삼룡의 웹 포트폴리오</H1>
         </a>
         <P>洪森龍</P>
         <Social website={"/"} github={"https://github.com/Sam-Ryong"} />

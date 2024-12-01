@@ -50,13 +50,13 @@ class LlamaCpp {
   run({
     prompt,
     chatml = false,
-    n_predict = 30,
+    n_predict = -2,
     ctx_size = 512,
     batch_size = 512,
-    temp = 0.4,
+    temp = 0.6,
     n_gpu_layers = 0,
     top_k = 20,
-    top_p = 0.4,
+    top_p = 0.6,
     no_display_prompt = true,
   } = {}) {
     this.worker.postMessage({
