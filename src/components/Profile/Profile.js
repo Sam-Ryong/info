@@ -26,15 +26,7 @@ function ProfileMarkDown() {
   }, []);
 
   return (
-    <div
-      style={{
-        width: "80%",
-        margin: "0 auto",
-        fontFamily: "Arial, sans-serif",
-        fontSize: "16px",
-        color: "black",
-      }}
-    >
+    <div>
       {markdownContent ? (
         <ReactMarkdown>{markdownContent}</ReactMarkdown>
       ) : (

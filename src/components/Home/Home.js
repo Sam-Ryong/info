@@ -6,9 +6,6 @@ import "./Home.css";
 const Home = () => {
   return (
     <div>
-      <div className="slider-container">
-        <Slider />
-      </div>
       <div className="profile-container">
         <Profile />
       </div>
