@@ -26,7 +26,7 @@ const onModelLoaded = () => {
   app.run({
     prompt: postPrompt + prompt + `?</s> <|assistant|>`,
     ctx_size: 512,
-    temp: 0.4,
+    temp: 0.6,
     top_k: 20,
     no_display_prompt: true,
   });
