@@ -3,7 +3,7 @@ import React from "react";
 const Ask = () => {
   return (
     <iframe
-      src="https://sam-ryong.github.io/info/ask"
+      src={process.env.PUBLIC_URL + "/ask"}
       title="My iframe"
       style={{
         width: "30%", // 너비 설정

@@ -1,5 +1,4 @@
 import "react-quill/dist/quill.snow.css";
-import Slider from "../Slider/Slider";
 import Profile from "../Profile/Profile";
 import "./Home.css";
 
