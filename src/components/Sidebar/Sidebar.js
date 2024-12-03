@@ -47,16 +47,32 @@ const Sidebar = () => {
   // 폼 제출
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+
+    // URL 중복 여부 확인
+    const existingPost = posts.find((post) => post.url === formData.url);
+
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_API_HOST}/posts`,
-        formData
-      );
-      console.log("Post Created:", response.data);
-      alert("게시물이 성공적으로 등록되었습니다!");
+      if (existingPost) {
+        // PUT 요청: 기존 게시물 업데이트
+        const response = await axios.put(
+          `${process.env.REACT_APP_API_HOST}/posts/${existingPost.id}`,
+          formData
+        );
+        console.log("Post Updated:", response.data);
+        alert("게시물이 성공적으로 업데이트되었습니다!");
+      } else {
+        // POST 요청: 새 게시물 생성
+        const response = await axios.post(
+          `${process.env.REACT_APP_API_HOST}/posts`,
+          formData
+        );
+        console.log("Post Created:", response.data);
+        alert("게시물이 성공적으로 등록되었습니다!");
+      }
+
       setIsFormModalOpen(false);
     } catch (error) {
-      console.error("Failed to create post:", error);
+      console.error("Failed to submit post:", error);
       alert("게시물 등록에 실패했습니다.");
     }
   };

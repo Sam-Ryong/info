@@ -4,40 +4,26 @@ import "react-quill/dist/quill.snow.css";
 import "./Content.css";
 import "react-notion/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
+import { useSelector } from "react-redux";
 
 import { NotionRenderer } from "react-notion";
 
 const Content = () => {
   const { pageId } = useParams(); // URL에서 pageId 가져오기
-  const [response, setResponse] = useState(null); // 초기값 null
-  const [loading, setLoading] = useState(true); // 로딩 상태 추가
+  const posts = useSelector((state) => state.posts || []); // Redux에서 posts 가져오기
 
-  useEffect(() => {
-    if (pageId) {
-      setLoading(true); // 데이터 로드 시작
-      fetch(`https://notion-api.splitbee.io/v1/page/${pageId}`)
-        .then((res) => res.json())
-        .then((resJson) => {
-          setResponse(resJson);
-        })
-        .catch((err) => console.error("Failed to fetch Notion data:", err))
-        .finally(() => setLoading(false)); // 로딩 완료
-    }
-  }, [pageId]);
+  // posts에서 해당하는 객체 찾기
+  const currentPost = posts.find((post) => post.url === pageId);
 
-  if (loading) {
-    return <div className="loading">Loading...</div>; // 로딩 표시
-  }
-
-  if (!response) {
-    return <div className="error">Failed to load content.</div>; // 에러 상태 처리
+  if (!currentPost) {
+    return <div className="error">Content not found.</div>; // pageId에 해당하는 데이터가 없을 때
   }
 
   return (
     <main className="content">
       <div className="notion-dark-mode">
         <NotionRenderer
-          blockMap={response}
+          blockMap={currentPost.content} // content 렌더링
           fullPage={true}
           hideHeader={true}
           theme="dark"
