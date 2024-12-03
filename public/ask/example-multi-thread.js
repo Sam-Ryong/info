@@ -24,7 +24,7 @@ const onModelLoaded = () => {
   console.debug("model: loaded");
 
   app.run({
-    prompt: postPrompt + prompt + `?</s> <|assistant|>`,
+    prompt: postPrompt + prompt + `? Answer in one sentence.</s> <|assistant|>`,
     ctx_size: 512,
     temp: 0.6,
     top_k: 20,
