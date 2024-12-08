@@ -1,45 +1,135 @@
 .sidebar {
   position: fixed;
   top: 30%; /* 화면의 상단으로부터 얼마나 떨어져 있을지 설정 */
-  background-color: rgba(255, 255, 255, 0.349); /* 배경색 추가 */
-  width: 20%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)),
+    url("/src/images/memory.jpg"); /* 배경 이미지 추가 */
+  background-size: 50%;
+  width: 10%;
   height: 500px;
   border-radius: 10px;
-  margin-left: 5%;
+  margin-left: 10%;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 약간의 그림자 효과 */
 }
 
+/* 제목 스타일 */
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #f5f5f5; /* 밝은 흰색 */
+  text-align: center;
+  border-bottom: 1px solid #444; /* 구분선 */
+  padding-bottom: 10px;
+}
+
+/* 메뉴 리스트 */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  font-size: 1rem;
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  color: #dcdcdc; /* 밝은 회색 텍스트 */
+}
+
+.sidebar ul li:hover {
+  background-color: #40444b; /* 살짝 더 밝은 배경 */
+  color: #ffffff;
+}
+
+/* 버튼 스타일 */
+.sidebar button {
+  background-color: #7289da; /* Discord 스타일 파란색 */
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.sidebar button:hover {
+  background-color: #5b6eae; /* 어두운 파란색 */
+}
+
+/* 모달 배경 */
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
+  background-color: #2c2f33;
+  color: #ffffff;
   padding: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 300px;
   z-index: 1000;
 }
+
+/* 모달 제목 */
 .modal h3 {
-  margin-bottom: 10px;
+  margin: 0 0 20px 0;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #f5f5f5;
 }
-.modal input {
+
+/* 모달 입력 필드 */
+.modal input[type="text"],
+.modal input[type="password"] {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.modal button {
-  margin-right: 10px;
-  padding: 8px 12px;
+  padding: 10px;
+  margin-bottom: 15px;
   border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
+  border-radius: 5px;
+  background-color: #40444b;
+  color: #ffffff;
+  font-size: 1rem;
 }
+
+.modal input[type="text"]::placeholder,
+.modal input[type="password"]::placeholder {
+  color: #bdbdbd; /* 연한 회색 */
+}
+
+/* 모달 버튼 */
+.modal button {
+  width: 100%;
+  background-color: #7289da;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
 .modal button:hover {
-  background-color: #0056b3;
+  background-color: #5b6eae;
+}
+
+.modal button:nth-child(2) {
+  background-color: #e74c3c; /* 빨간색 */
+}
+
+.modal button:nth-child(2):hover {
+  background-color: #c0392b; /* 어두운 빨간색 */
+}
+
+/* 링크 스타일 */
+.sidebar ul li a {
+  text-decoration: none;
+  color: inherit;
 }

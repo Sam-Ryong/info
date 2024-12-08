@@ -25,6 +25,7 @@ const Sidebar = () => {
         const response = await axios.get(
           `${process.env.REACT_APP_API_HOST}/posts`
         );
+
         dispatch(setInit(response.data));
       } catch (error) {
         console.error("Failed to fetch posts:", error);
@@ -88,8 +89,10 @@ const Sidebar = () => {
 
   return (
     <aside className="sidebar">
-      <h2>메뉴</h2>
-      <ul onClick={() => handleNavigate("home")}>홈으로</ul>
+      <h2>리모콘</h2>
+      <ul>
+        <li onClick={() => handleNavigate("home")}>홈으로</li>
+      </ul>
       <ul>
         {posts &&
           posts.map((post) => (
