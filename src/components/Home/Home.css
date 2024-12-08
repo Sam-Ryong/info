@@ -14,3 +14,34 @@
   max-width: 75%;
   margin: 0 auto; /* 가운데 정렬 */
 }
+
+.content {
+  /* flex: 1; */
+  color: #f5f5f5;
+  padding: 20px;
+  background-color: rgb(20, 20, 20, 0.9); /* 밝은 배경색으로 변경 */
+  border-radius: 10px; /* 둥근 모서리 추가 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 카드와 유사한 그림자 */
+  margin: 20px auto; /* 카드 스타일과 동일한 간격 */
+  width: 80%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* 호버 애니메이션 */
+}
+body.dark-mode {
+  color: #f5f5f5;
+}
+
+.notion-dark-mode .notion {
+  color: #e0e0e0;
+}
+
+.sidebar {
+  position: sticky;
+  top: 10%; /* 화면 상단에서 얼마나 떨어질지 설정 */
+  background-color: #456686;
+  width: 10%; /* Sidebar 너비 */
+  height: 200px;
+  border-radius: 10px;
+  margin-left: 1%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 약간의 그림자 효과 */
+}
