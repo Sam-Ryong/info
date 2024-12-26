@@ -1,19 +1,3 @@
-// import "react-quill/dist/quill.snow.css";
-// import Profile from "../Profile/Profile";
-// import "./Home.css";
-
-// const Home = () => {
-//   return (
-//     <div>
-//       <div className="profile-container">
-//         <Profile />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
 import React, { useEffect, useState } from "react";
 import "react-quill/dist/quill.snow.css";
 import "./Home.css";
@@ -27,6 +11,21 @@ const Content = () => {
 
   useEffect(() => {
     const NOTION_PAGE_ID = "26eb3f0d090a4983aea11f1694fed856";
+    fetch(`https://notion-api.splitbee.io/v1/page/${NOTION_PAGE_ID}`)
+      .then((res) => res.json())
+      .then((resJson) => {
+        setResponse(resJson);
+      });
+    fetch(`https://notion-api.splitbee.io/v1/page/${NOTION_PAGE_ID}`)
+      .then((res) => res.json())
+      .then((resJson) => {
+        setResponse(resJson);
+      });
+    fetch(`https://notion-api.splitbee.io/v1/page/${NOTION_PAGE_ID}`)
+      .then((res) => res.json())
+      .then((resJson) => {
+        setResponse(resJson);
+      });
     fetch(`https://notion-api.splitbee.io/v1/page/${NOTION_PAGE_ID}`)
       .then((res) => res.json())
       .then((resJson) => {
