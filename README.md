@@ -1,70 +1,99 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **🌟 졸업 프로젝트: WASM으로 LLM 실행하기**
 
-## Available Scripts
+일반 사용자의 컴퓨터 사양이 점점 좋아지는 현재, LLM 을 클라이언트의 웹 브라우저에서 동작하도록 하는 것을 시도해본 프로젝트입니다. 이미 캡스톤 디자인을 통해 Raspberry Pi 환경에서 LLM을 구동하는 것에 성공했기에 충분히 가능할것으로 보여서 시작했습니다. 
+다만, 수백억개의 파라미터를 지닌 자연어 모델 자체를 브라우저에 올릴수는 없기에 파라미터 양자화를 거친 경량화 모델을 사용합니다.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## **🔷 WASM이란?**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+WebAssembly(WASM)는 웹 브라우저에서 고성능 실행을 위해 설계된 바이너리 명령어 형식입니다. C, C++, Rust와 같은 언어로 작성된 코드를 컴파일하여 브라우저에서 실행할 수 있도록 하며, 네이티브에 가까운 속도를 제공합니다. WASM은 게임, 영상 처리, 머신러닝과 같은 연산 집약적인 애플리케이션을 웹 환경에서 실행하는 데 널리 사용됩니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 주요 특징:
+- 네이티브에 가까운 빠른 실행 속도
+- 안전한 샌드박스 환경
+- 다양한 플랫폼에서 실행 가능
+- JavaScript와 상호운용 가능
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **🦙 Llama.cpp란?**
 
-### `npm run build`
+[Llama.cpp](https://github.com/ggerganov/llama.cpp)는 Meta의 LLaMA(Large Language Model Meta AI) 모델을 실행하기 위한 경량 C++ 구현체입니다. CPU 기반 추론에 최적화되어 있어, GPU 없이도 효과적으로 LLM을 실행할 수 있으며, 다양한 양자화(quantization) 기술을 지원하여 메모리 사용량을 줄이고 속도를 향상시킵니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 주요 특징:
+- CPU에서 효율적으로 실행 가능
+- 4비트, 8비트 모델과 같은 양자화 지원
+- Windows, Linux, macOS, WASM 등 다양한 환경에서 동작
+- 다양한 애플리케이션과 손쉽게 통합 가능
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **📌 프로젝트 개요**
 
-### `npm run eject`
+이 프로젝트는 `llama.cpp`를 WebAssembly(WASM)로 컴파일하여 웹 브라우저에서 직접 실행하는 것을 목표로 합니다. WASM의 성능과 보안성을 활용하여 사용자가 서버 없이 브라우저에서 직접 LLaMA 모델과 상호작용할 수 있도록 합니다. 이를 통해 접근성을 높이고, 백엔드 인프라 비용을 줄이며, 프라이버시를 강화할 수 있습니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **⚡ 핵심 기능**
+- **클라이언트 사이드 LLM 실행**: 외부 API 호출 없이 브라우저에서 LLaMA 모델 실행
+- **최적화된 성능**: WASM을 활용한 효율적인 추론
+- **인터랙티브 웹 UI**: 사용자 친화적인 인터페이스 제공
+- **보안 및 프라이버시 강화**: 서버로 데이터가 전송되지 않음
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **🛠️ 사용 기술**
+- **WASM**: `llama.cpp`를 컴파일하여 브라우저에서 실행
+- **C++**: `llama.cpp`의 핵심 구현
+- **JavaScript & WebAssembly API**: WASM을 웹 환경과 통합
+- **React (선택사항)**: UI 개발에 활용 가능
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **🚀 빌드 및 실행 방법**
 
-## Learn More
+### **1️⃣ 필수 준비물**
+다음 도구가 설치되어 있어야 합니다:
+- [Emscripten](https://emscripten.org/) (WASM 컴파일용)
+- `git`, `cmake`, `make`
+- WASM을 지원하는 웹 브라우저
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **2️⃣ 저장소 클론하기**
+```bash
+git clone https://github.com/ggerganov/llama.cpp.git
+cd llama.cpp
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **3️⃣ WASM으로 컴파일하기**
+```bash
+mkdir build && cd build
+emcmake cmake ..
+make
+```
+이 과정이 완료되면 `.wasm` 및 `.js` 파일이 생성되며, 이를 웹에서 실행할 수 있습니다.
 
-### Code Splitting
+### **4️⃣ 브라우저에서 실행하기**
+1. 로컬 HTTP 서버 실행:
+   ```bash
+   python3 -m http.server 8080
+   ```
+2. 브라우저에서 `http://localhost:8080` 접속
+3. LLaMA 모델과 상호작용 시작!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## **📜 결론**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+이 프로젝트는 LLM을 WASM을 활용하여 웹 브라우저에서 직접 실행할 수 있음을 보여줍니다. 백엔드 종속성을 제거함으로써 가볍고 프라이버시 중심적인 AI 애플리케이션을 누구나 쉽게 접근할 수 있도록 합니다.
 
-### Making a Progressive Web App
+### 향후 발전 방향:
+- Web Worker를 활용한 멀티스레딩으로 추론 속도 최적화
+- 보다 직관적인 사용자 인터페이스 개발
+- 다양한 LLaMA 모델 변형 지원
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🎯 **미래 목표:** 국세청, 건강검진, 은행 등의 복잡한 서비스를 가진 사이트에 도우미로 서비스 이용방법에 대해 대답을 해주는 챗봇으로 활용하는 날이 올수도... 서비스 이용방법에 대해 대답해주는 LLM을 직접 고성능 서버를 돌려서 하기에는 비용이 크기때문..
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
